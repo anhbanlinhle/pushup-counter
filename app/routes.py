@@ -3,7 +3,11 @@ from models import process_video
 
 router = APIRouter()
 
-@router.post("/process_video")
+@router.get("/")
+async def homepage():
+    return {"message": "server ok"}
+
+@router.post("/pushup")
 async def process_video_data(video_data: bytes):
     processed_data = process_video(video_data)
-    return {"processed_data": processed_data}
+    return {"count": processed_data}
