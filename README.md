@@ -6,17 +6,11 @@ This project is a Python server that receives a video from a client, processes t
 
 1. Clone the repository
 2. Install the dependencies with `pip install -r requirements.txt`
-3. Run the server with `python app/main.py`
 
 ## Usage
+1. Go to the app directory with `cd app`
+2. Run the server with `uvicorn main:app --reload` or `python3 main.py`
 
-Send a POST request to `http://localhost:8000/process_video` with the video data in the request body. The server will process the video and return the processed data in the response.
+Send a **POST** request to `http://localhost:7979/pushup` with the video data in the request body. 
 
-### How to install a FastAPI server
-
-1. Install Python 3.6 or later
-2. Install pip
-3. Install FastAPI with `pip install fastapi`
-4. Install uvicorn with `pip install uvicorn`
-5. Run the server with `uvicorn main:app --reload`
-You can now access the server at http://localhost:8000/.
+The server will process the video and return the processed data in the response.
