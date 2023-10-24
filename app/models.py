@@ -16,8 +16,6 @@ def process_video(video_data):
     return processed_data
 
 def count_pushup(path):
-    md_drawing = md.solutions.drawing_utils
-    md_drawing_styles = md.solutions.drawing_styles
     md_pose = md.solutions.pose 
 
     count = 0
@@ -41,11 +39,6 @@ def count_pushup(path):
             imlist = []
 
             if result.pose_landmarks:
-                md_drawing.draw_landmarks(
-                    image,
-                    result.pose_landmarks,
-                    md_pose.POSE_CONNECTIONS
-                )
                 for id, lm in enumerate(result.pose_landmarks.landmark):
                     h, w, _ = image.shape
                     X, Y = int(lm.x * w), int(lm.y * h)
