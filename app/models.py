@@ -1,19 +1,5 @@
-import os
-import datetime
 import cv2
 import mediapipe as md
-
-def process_video(video_data):
-    file_name = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-
-    path = f"../data/{file_name}.mp4"
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-
-    with open(path, "wb") as f:
-        f.write(video_data)
-
-    processed_data = count_pushup(path)
-    return processed_data
 
 def count_pushup(path):
     md_pose = md.solutions.pose 
