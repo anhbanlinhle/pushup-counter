@@ -1,5 +1,6 @@
 import cv2
 import mediapipe as md
+import time
 
 def count_pushup(path):
     md_pose = md.solutions.pose 
@@ -8,6 +9,10 @@ def count_pushup(path):
     position = None 
 
     cap = cv2.VideoCapture(path)
+
+    # debug
+    num_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    start_time = time.time()
 
     with md_pose.Pose(
         min_detection_confidence = 0.7,
@@ -39,6 +44,16 @@ def count_pushup(path):
                     position = "up"
                     count +=1 
                     print(count)
+
+    # debug
+    end_time = time.time()
+    time_taken = end_time - start_time
+    fps = num_frames / time_taken
+    time_per_frame = time_taken / num_frames * 1000
+
+    print(f'Process time: {time_taken:.2f}')
+    print(f'Frames per second: {fps:.2f}')
+    print(f'Time per frame: {time_per_frame:.2f} ms')
 
     cap.release()
     return count
