@@ -43,9 +43,11 @@ def count_pushup(path):
             if len(imlist) != 0:
                 left = abs(imlist[12][2] - imlist[14][2])
                 right = abs(imlist[11][2] - imlist[13][2])
-                if ((left) >= 75 and (right) >= 75):
+                if ((left) >= constant.DOWN_HAND_THRESHOLD 
+                and (right) >= constant.DOWN_HAND_THRESHOLD):
                     position = "down"
-                if ((left) <= 50 and (right) <= 50) and position == "down":
+                if ((left) <= constant.UP_HAND_THRESHOLD 
+                and (right) <= constant.UP_HAND_THRESHOLD) and position == "down":
                     position = "up"
                     count +=1 
                     print(count)
