@@ -4,6 +4,7 @@ import time
 
 from moviepy.editor import VideoFileClip
 import moviepy.video.fx.all as vfx
+import constant
 
 def count_pushup(path):
     md_pose = md.solutions.pose 
@@ -64,6 +65,6 @@ def count_pushup(path):
 
 def speedup_video(old, new):
     clip = VideoFileClip(old)
-    final = clip.fx(vfx.speedx, 9)
+    final = clip.fx(vfx.speedx, constant.SPEED_UP_THRESHOLD)
     final.write_videofile(new)
     return 
