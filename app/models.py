@@ -2,12 +2,17 @@ import cv2
 import mediapipe as md
 import time
 
+from moviepy.editor import VideoFileClip
+import moviepy.video.fx.all as vfx
+
 def count_pushup(path):
     md_pose = md.solutions.pose 
 
     count = 0
     position = None 
 
+    speedup_video(path)
+    # cap = cv2.VideoCapture(path, cv2.CAP_DSHOW)
     cap = cv2.VideoCapture(path)
 
     # debug
@@ -57,3 +62,19 @@ def count_pushup(path):
 
     cap.release()
     return count
+
+def speedup_video(path):
+    # # Import video clip
+    # clip = VideoFileClip(path)
+    # print("fps: {}".format(clip.fps))
+
+    # # Modify the FPS
+    # clip = clip.set_fps(clip.fps * 3)
+
+    # # Apply speed up
+    # final = clip.fx(vfx.speedx, 2)
+    # print("fps: {}".format(final.fps))
+
+    # # Save video clip
+    # final.write_videofile(path)
+    return 
