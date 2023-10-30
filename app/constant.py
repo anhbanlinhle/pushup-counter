@@ -1,3 +1,11 @@
 SPEED_UP_THRESHOLD = 9
 UP_HAND_THRESHOLD = 50
 DOWN_HAND_THRESHOLD = 75
+LEFT_SHOULDER = 11
+RIGHT_SHOULDER = 12
+LEFT_ELBOW = 13
+RIGHT_ELBOW = 14
+# 11 - left shoulder
+#12 - right shoulder
+#13 - left elbow
+#14 - right elbow
