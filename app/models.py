@@ -41,8 +41,8 @@ def count_pushup(path):
                     imlist.append([id, X, Y])
 
             if len(imlist) != 0:
-                left = abs(imlist[constant.RIGHT_SHOULDER][2] - imlist[constant.RIGHT_ELBOW][2])
-                right = abs(imlist[constant.LEFT_SHOULDER][2] - imlist[constant.LEFT_ELBOW][2])
+                right = abs(imlist[constant.RIGHT_SHOULDER][2] - imlist[constant.RIGHT_ELBOW][2])
+                left = abs(imlist[constant.LEFT_SHOULDER][2] - imlist[constant.LEFT_ELBOW][2])
                 if ((left) >= constant.DOWN_HAND_THRESHOLD 
                 and (right) >= constant.DOWN_HAND_THRESHOLD):
                     position = "down"
