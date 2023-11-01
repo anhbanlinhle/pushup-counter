@@ -23,3 +23,8 @@ async def process_video_data(video_data: bytes = File()):
     speedup_video(old, new)
     processed_data = count_pushup(new)
     return {"count": processed_data}
+
+@router.post("/squat")
+async def process_video_squat(video_data: bytes = File()):
+    # task - implement data processing for squat exercise
+    return
