@@ -1,0 +1,1 @@
+rm -rf data/original/*.mp4 data/speedup/*.mp4
