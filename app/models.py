@@ -65,6 +65,10 @@ def count_pushup(path):
     cap.release()
     return count
 
+def count_squat(path):
+    count = 0
+    return count
+
 def speedup_video(old, new):
     clip = VideoFileClip(old)
     final = clip.fx(vfx.speedx, constant.SPEED_UP_THRESHOLD)
